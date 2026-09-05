@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Myntra Style E-Commerce</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Groww Investment App</title>
 
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
 
         * {
             margin: 0;
@@ -15,1023 +24,1622 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f5f5f5;
-            color: #282c3f;
+            background: #f7f8fa;
+            color: #1f2937;
         }
 
-        /* ================= HEADER ================= */
+        button {
+            cursor: pointer;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
-            height: 80px;
+            height: 70px;
             background: white;
+
             display: flex;
             align-items: center;
-            padding: 0 5%;
-            gap: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+            padding: 0 7%;
+
+            border-bottom: 1px solid #eeeeee;
+
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .logo {
             font-size: 30px;
             font-weight: bold;
-            color: #ff3f6c;
-            cursor: pointer;
+
+            color: #00b386;
+
+            margin-right: 45px;
         }
 
         nav {
             display: flex;
-            gap: 25px;
-            height: 100%;
-            align-items: center;
+            gap: 28px;
         }
 
         nav a {
             text-decoration: none;
-            color: #282c3f;
-            font-size: 14px;
-            font-weight: bold;
-            position: relative;
+
+            color: #444;
+
+            font-size: 15px;
+            font-weight: 600;
         }
 
         nav a:hover {
-            color: #ff3f6c;
+            color: #00b386;
         }
 
-        nav a:hover::after {
-            content: "";
-            position: absolute;
-            height: 3px;
-            background: #ff3f6c;
-            left: 0;
-            right: 0;
-            bottom: -30px;
-        }
+        .search-box {
+            margin-left: auto;
 
-        .search {
-            flex: 1;
-            max-width: 400px;
+            width: 280px;
             height: 40px;
-            background: #f5f5f6;
+
+            background: #f5f6f7;
+
+            border: 1px solid #e2e2e2;
+
+            border-radius: 5px;
+
             display: flex;
             align-items: center;
-            border-radius: 4px;
-            margin-left: auto;
         }
 
-        .search span {
-            padding-left: 15px;
+        .search-box span {
+            padding-left: 12px;
             font-size: 18px;
         }
 
-        .search input {
+        .search-box input {
             width: 100%;
             height: 100%;
+
             border: none;
             outline: none;
+
             background: transparent;
+
             padding: 10px;
+
             font-size: 14px;
         }
 
-        .header-icons {
-            display: flex;
-            gap: 20px;
-        }
+        .login-btn {
+            margin-left: 20px;
 
-        .icon {
-            text-align: center;
-            cursor: pointer;
-            font-size: 20px;
-        }
+            background: #00b386;
 
-        .icon p {
-            font-size: 11px;
-            margin-top: 3px;
+            color: white;
+
+            border: none;
+
+            padding: 11px 22px;
+
+            border-radius: 5px;
+
             font-weight: bold;
         }
 
-        /* ================= HERO ================= */
+        .login-btn:hover {
+            background: #009b75;
+        }
 
-        .hero {
-            margin: 25px auto;
-            width: 90%;
-            height: 350px;
+        /* =========================
+           MAIN
+        ========================= */
 
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(0,0,0,0.6),
-                    rgba(0,0,0,0.1)
-                ),
-                linear-gradient(
-                    120deg,
-                    #ff3f6c,
-                    #ff9a44,
-                    #ffe259
-                );
+        main {
+            width: 86%;
+            margin: 30px auto;
+        }
 
+        /* =========================
+           WELCOME
+        ========================= */
+
+        .welcome {
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .welcome p {
+            color: #777;
+        }
+
+        /* =========================
+           MARKET INDEX
+        ========================= */
+
+        .market-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 35px;
+        }
+
+        .market-card {
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 8px;
+
+            border: 1px solid #eeeeee;
+
+            transition: 0.2s;
+        }
+
+        .market-card:hover {
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,0.08);
+
+            transform: translateY(-2px);
+        }
+
+        .market-card h3 {
+            font-size: 15px;
+
+            color: #555;
+
+            margin-bottom: 15px;
+        }
+
+        .market-value {
+            font-size: 22px;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+        }
+
+        .positive {
+            color: #00a878;
+        }
+
+        .negative {
+            color: #e5484d;
+        }
+
+        /* =========================
+           PORTFOLIO
+        ========================= */
+
+        .portfolio {
+            background: white;
+
+            border: 1px solid #eeeeee;
+
+            border-radius: 8px;
+
+            padding: 25px;
+
+            margin-bottom: 35px;
+        }
+
+        .portfolio-header {
             display: flex;
+
+            justify-content: space-between;
+
             align-items: center;
-            padding-left: 7%;
-            color: white;
-        }
 
-        .hero-content h1 {
-            font-size: 52px;
-            margin-bottom: 15px;
-        }
-
-        .hero-content h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        .hero-content p {
-            font-size: 18px;
             margin-bottom: 25px;
         }
 
-        .shop-btn {
-            background: white;
-            color: #ff3f6c;
+        .portfolio-header h2 {
+            font-size: 22px;
+        }
+
+        .view-btn {
             border: none;
-            padding: 14px 35px;
+
+            background: #e9f9f5;
+
+            color: #00a878;
+
+            padding: 9px 18px;
+
+            border-radius: 5px;
+
             font-weight: bold;
-            cursor: pointer;
         }
 
-        /* ================= SECTION ================= */
+        .portfolio-data {
+            display: grid;
 
-        .section {
-            width: 90%;
-            margin: 35px auto;
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 25px;
         }
+
+        .portfolio-item p:first-child {
+            color: #777;
+
+            font-size: 13px;
+
+            margin-bottom: 8px;
+        }
+
+        .portfolio-item p:last-child {
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           QUICK ACTIONS
+        ========================= */
+
+        .quick-actions {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 35px;
+        }
+
+        .action {
+            background: white;
+
+            border: 1px solid #eeeeee;
+
+            padding: 20px;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            transition: 0.2s;
+        }
+
+        .action:hover {
+            border-color: #00b386;
+
+            transform: translateY(-2px);
+        }
+
+        .action-icon {
+            font-size: 35px;
+
+            margin-bottom: 10px;
+        }
+
+        .action h3 {
+            font-size: 15px;
+
+            margin-bottom: 5px;
+        }
+
+        .action p {
+            font-size: 12px;
+
+            color: #777;
+        }
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
 
         .section-title {
-            font-size: 28px;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-        }
-
-        /* ================= CATEGORIES ================= */
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-        }
-
-        .category {
-            background: white;
-            text-align: center;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-        }
-
-        .category-image {
-            height: 180px;
             display: flex;
-            justify-content: center;
+
+            justify-content: space-between;
+
             align-items: center;
-            font-size: 75px;
-            background: #fff0f3;
-        }
 
-        .category h3 {
-            padding: 15px 5px 5px;
-        }
-
-        .category p {
-            color: #ff3f6c;
-            font-weight: bold;
-            padding-bottom: 15px;
-        }
-
-        /* ================= PRODUCTS ================= */
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 18px;
-        }
-
-        .product {
-            background: white;
-            cursor: pointer;
-            transition: 0.3s;
-            position: relative;
-        }
-
-        .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 18px rgba(0,0,0,0.15);
-        }
-
-        .product-image {
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 110px;
-            background: #f8f8f8;
-        }
-
-        .product-info {
-            padding: 12px;
-        }
-
-        .product-info h3 {
-            font-size: 15px;
-            margin-bottom: 7px;
-        }
-
-        .product-info p {
-            font-size: 13px;
-            color: #777;
-            margin-bottom: 7px;
-        }
-
-        .price {
-            font-weight: bold;
-            color: #282c3f !important;
-        }
-
-        .discount {
-            color: #ff3f6c !important;
-            font-weight: bold;
-        }
-
-        .wishlist {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            background: white;
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-        }
-
-        /* ================= DEAL BANNER ================= */
-
-        .deal-banner {
-            width: 90%;
-            margin: 40px auto;
-            height: 220px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #282c3f,
-                    #ff3f6c
-                );
-
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .deal-banner h2 {
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
-
-        .deal-banner p {
-            font-size: 18px;
             margin-bottom: 20px;
         }
 
-        /* ================= FOOTER ================= */
+        .section-title h2 {
+            font-size: 24px;
+        }
+
+        .section-title a {
+            color: #00a878;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           STOCKS
+        ========================= */
+
+        .stocks {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 40px;
+        }
+
+        .stock-card {
+            background: white;
+
+            border: 1px solid #eeeeee;
+
+            border-radius: 8px;
+
+            padding: 20px;
+
+            transition: 0.2s;
+        }
+
+        .stock-card:hover {
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,0.08);
+
+            transform: translateY(-3px);
+        }
+
+        .stock-top {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 20px;
+        }
+
+        .stock-logo {
+            width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+
+            background: #e9f9f5;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-weight: bold;
+
+            color: #00a878;
+        }
+
+        .stock-name h3 {
+            font-size: 15px;
+
+            margin-bottom: 4px;
+        }
+
+        .stock-name p {
+            font-size: 12px;
+
+            color: #888;
+        }
+
+        .stock-price {
+            font-size: 21px;
+
+            font-weight: bold;
+
+            margin-bottom: 6px;
+        }
+
+        .stock-change {
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .buy-btn {
+            width: 100%;
+
+            margin-top: 18px;
+
+            padding: 10px;
+
+            background: #00b386;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+        }
+
+        .buy-btn:hover {
+            background: #009b75;
+        }
+
+        /* =========================
+           MUTUAL FUNDS
+        ========================= */
+
+        .funds {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-bottom: 40px;
+        }
+
+        .fund-card {
+            background: white;
+
+            border: 1px solid #eeeeee;
+
+            border-radius: 8px;
+
+            padding: 22px;
+        }
+
+        .fund-card h3 {
+            font-size: 16px;
+
+            margin-bottom: 8px;
+        }
+
+        .fund-card p {
+            color: #777;
+
+            font-size: 13px;
+
+            margin-bottom: 18px;
+        }
+
+        .fund-details {
+            display: flex;
+
+            justify-content: space-between;
+
+            border-top: 1px solid #eeeeee;
+
+            padding-top: 15px;
+        }
+
+        .fund-details div {
+            text-align: left;
+        }
+
+        .fund-details small {
+            color: #888;
+
+            display: block;
+
+            margin-bottom: 5px;
+        }
+
+        .fund-details strong {
+            font-size: 14px;
+        }
+
+        /* =========================
+           IPO
+        ========================= */
+
+        .ipo {
+            background: white;
+
+            border: 1px solid #eeeeee;
+
+            border-radius: 8px;
+
+            padding: 25px;
+
+            margin-bottom: 40px;
+        }
+
+        .ipo-row {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 18px 0;
+
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .ipo-row:last-child {
+            border-bottom: none;
+        }
+
+        .ipo-company {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+        .ipo-logo {
+            width: 45px;
+            height: 45px;
+
+            background: #f0f7ff;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bold;
+
+            color: #3478f6;
+        }
+
+        .ipo-company h3 {
+            font-size: 15px;
+
+            margin-bottom: 5px;
+        }
+
+        .ipo-company p {
+            font-size: 12px;
+
+            color: #888;
+        }
+
+        .apply-btn {
+            border: 1px solid #00b386;
+
+            color: #00a878;
+
+            background: white;
+
+            padding: 9px 20px;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+        }
+
+        .apply-btn:hover {
+            background: #e9f9f5;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background: #282c3f;
+            background: #1f2937;
+
             color: white;
-            padding: 50px 8%;
+
+            padding: 45px 8%;
+
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 40px;
         }
 
         footer h3 {
-            color: #ff3f6c;
-            margin-bottom: 20px;
+            color: #00c896;
+
+            margin-bottom: 18px;
+
+            font-size: 16px;
         }
 
         footer a {
             display: block;
-            color: #ddd;
+
             text-decoration: none;
-            margin-bottom: 12px;
-            font-size: 14px;
+
+            color: #ccc;
+
+            margin-bottom: 11px;
+
+            font-size: 13px;
         }
 
         footer a:hover {
             color: white;
         }
 
-        .copyright {
-            background: #1e212d;
-            color: #aaa;
-            text-align: center;
-            padding: 20px;
+        footer p {
+            color: #ccc;
+
             font-size: 13px;
+
+            line-height: 1.7;
         }
 
-        /* ================= RESPONSIVE ================= */
+        .copyright {
+            background: #151c27;
+
+            color: #999;
+
+            text-align: center;
+
+            padding: 18px;
+
+            font-size: 12px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
         @media(max-width: 1100px) {
 
-            nav {
-                gap: 12px;
+            header {
+                padding: 0 3%;
             }
 
-            .products {
-                grid-template-columns: repeat(4, 1fr);
+            main {
+                width: 92%;
             }
 
-            .categories {
-                grid-template-columns: repeat(3, 1fr);
+            .market-container,
+            .stocks {
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
+
+            .quick-actions {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .funds {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
         }
 
-        @media(max-width: 800px) {
+        @media(max-width: 750px) {
 
             header {
                 height: auto;
+
                 padding: 15px;
+
                 flex-wrap: wrap;
             }
 
+            .logo {
+                margin-right: auto;
+            }
+
             nav {
-                order: 3;
+                order: 4;
+
                 width: 100%;
-                justify-content: center;
+
+                overflow-x: auto;
+
+                padding-top: 15px;
             }
 
-            nav a:hover::after {
-                display: none;
+            .search-box {
+                width: 230px;
             }
 
-            .search {
-                max-width: none;
+            .login-btn {
+                margin-left: 5px;
             }
 
-            .hero {
-                height: 280px;
+            .portfolio-data {
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
-            .hero-content h1 {
-                font-size: 38px;
-            }
-
-            .products {
-                grid-template-columns: repeat(2, 1fr);
+            .market-container,
+            .stocks,
+            .funds {
+                grid-template-columns: 1fr;
             }
 
             footer {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
+
         }
 
         @media(max-width: 500px) {
 
-            .logo {
-                font-size: 24px;
+            .search-box {
+                order: 3;
+
+                width: 100%;
+
+                margin-top: 10px;
             }
 
-            nav {
-                overflow-x: auto;
-                justify-content: flex-start;
-                padding-bottom: 5px;
+            .quick-actions {
+                grid-template-columns: 1fr;
             }
 
-            .header-icons {
-                gap: 8px;
-            }
-
-            .hero {
-                width: 95%;
-                padding-left: 25px;
-            }
-
-            .hero-content h1 {
-                font-size: 30px;
-            }
-
-            .hero-content h2 {
-                font-size: 20px;
-            }
-
-            .categories {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .products {
+            .portfolio-data {
                 grid-template-columns: 1fr 1fr;
-                gap: 10px;
             }
 
-            .product-image {
-                height: 180px;
-                font-size: 70px;
+            .ipo-row {
+                gap: 10px;
             }
 
             footer {
                 grid-template-columns: 1fr;
             }
+
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
     <div class="logo">
-        myntra
+        groww
     </div>
 
+
     <nav>
-        <a href="#">MEN</a>
-        <a href="#">WOMEN</a>
-        <a href="#">KIDS</a>
-        <a href="#">HOME</a>
-        <a href="#">BEAUTY</a>
-        <a href="#">STUDIO</a>
+
+        <a href="#">
+            Stocks
+        </a>
+
+        <a href="#">
+            Mutual Funds
+        </a>
+
+        <a href="#">
+            ETFs
+        </a>
+
+        <a href="#">
+            IPOs
+        </a>
+
+        <a href="#">
+            Gold
+        </a>
+
     </nav>
 
-    <div class="search">
 
-        <span>🔍</span>
+    <div class="search-box">
+
+        <span>
+            🔍
+        </span>
 
         <input
             type="text"
-            placeholder="Search for products, brands and more"
+            placeholder="Search stocks, mutual funds..."
         >
 
     </div>
 
-    <div class="header-icons">
 
-        <div class="icon">
-            👤
-            <p>Profile</p>
-        </div>
-
-        <div class="icon">
-            ❤️
-            <p>Wishlist</p>
-        </div>
-
-        <div class="icon">
-            🛍️
-            <p>Bag</p>
-        </div>
-
-    </div>
+    <button class="login-btn">
+        Login
+    </button>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
 
-<section class="hero">
+<!-- =========================
+     MAIN
+========================= -->
 
-    <div class="hero-content">
+<main>
 
-        <h1>FASHION SALE</h1>
 
-        <h2>FLAT 50% OFF</h2>
+    <!-- WELCOME -->
+
+    <section class="welcome">
+
+        <h1>
+            Good afternoon!
+        </h1>
 
         <p>
-            Discover the latest styles & trends
+            Track your investments and explore opportunities.
         </p>
 
-        <button class="shop-btn">
-            SHOP NOW
-        </button>
-
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= CATEGORIES ================= -->
 
-<section class="section">
+    <!-- MARKET INDICES -->
 
-    <h2 class="section-title">
-        SHOP BY CATEGORY
-    </h2>
+    <section>
 
-    <div class="categories">
+        <div class="section-title">
 
-        <div class="category">
+            <h2>
+                Market Today
+            </h2>
 
-            <div class="category-image">
-                👔
-            </div>
-
-            <h3>
-                Men's Fashion
-            </h3>
-
-            <p>
-                UP TO 60% OFF
-            </p>
+            <a href="#">
+                View all
+            </a>
 
         </div>
 
 
-        <div class="category">
-
-            <div class="category-image">
-                👗
-            </div>
-
-            <h3>
-                Women's Fashion
-            </h3>
-
-            <p>
-                UP TO 70% OFF
-            </p>
-
-        </div>
+        <div class="market-container">
 
 
-        <div class="category">
-
-            <div class="category-image">
-                👶
-            </div>
-
-            <h3>
-                Kids
-            </h3>
-
-            <p>
-                UP TO 50% OFF
-            </p>
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-image">
-                👟
-            </div>
-
-            <h3>
-                Footwear
-            </h3>
-
-            <p>
-                UP TO 65% OFF
-            </p>
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-image">
-                👜
-            </div>
-
-            <h3>
-                Accessories
-            </h3>
-
-            <p>
-                UP TO 55% OFF
-            </p>
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-image">
-                💄
-            </div>
-
-            <h3>
-                Beauty
-            </h3>
-
-            <p>
-                UP TO 40% OFF
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PRODUCTS ================= -->
-
-<section class="section">
-
-    <h2 class="section-title">
-        TRENDING NOW
-    </h2>
-
-    <div class="products">
-
-
-        <div class="product">
-
-            <div class="wishlist">
-                ♡
-            </div>
-
-            <div class="product-image">
-                👕
-            </div>
-
-            <div class="product-info">
+            <div class="market-card">
 
                 <h3>
-                    Roadster
+                    NIFTY 50
+                </h3>
+
+                <div class="market-value">
+                    24,832.20
+                </div>
+
+                <div class="positive">
+                    ▲ 185.40 (0.75%)
+                </div>
+
+            </div>
+
+
+            <div class="market-card">
+
+                <h3>
+                    SENSEX
+                </h3>
+
+                <div class="market-value">
+                    81,721.12
+                </div>
+
+                <div class="positive">
+                    ▲ 612.35 (0.76%)
+                </div>
+
+            </div>
+
+
+            <div class="market-card">
+
+                <h3>
+                    BANK NIFTY
+                </h3>
+
+                <div class="market-value">
+                    54,210.40
+                </div>
+
+                <div class="negative">
+                    ▼ 125.30 (0.23%)
+                </div>
+
+            </div>
+
+
+            <div class="market-card">
+
+                <h3>
+                    NIFTY IT
+                </h3>
+
+                <div class="market-value">
+                    41,285.60
+                </div>
+
+                <div class="positive">
+                    ▲ 320.45 (0.78%)
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PORTFOLIO -->
+
+    <section class="portfolio">
+
+        <div class="portfolio-header">
+
+            <h2>
+                My Portfolio
+            </h2>
+
+            <button class="view-btn">
+                View Portfolio
+            </button>
+
+        </div>
+
+
+        <div class="portfolio-data">
+
+
+            <div class="portfolio-item">
+
+                <p>
+                    Invested
+                </p>
+
+                <p>
+                    ₹1,25,000
+                </p>
+
+            </div>
+
+
+            <div class="portfolio-item">
+
+                <p>
+                    Current Value
+                </p>
+
+                <p>
+                    ₹1,42,850
+                </p>
+
+            </div>
+
+
+            <div class="portfolio-item">
+
+                <p>
+                    Total Returns
+                </p>
+
+                <p class="positive">
+                    +₹17,850
+                </p>
+
+            </div>
+
+
+            <div class="portfolio-item">
+
+                <p>
+                    Returns %
+                </p>
+
+                <p class="positive">
+                    +14.28%
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- QUICK ACTIONS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                Explore
+            </h2>
+
+        </div>
+
+
+        <div class="quick-actions">
+
+
+            <div class="action">
+
+                <div class="action-icon">
+                    📈
+                </div>
+
+                <h3>
+                    Stocks
                 </h3>
 
                 <p>
-                    Men Regular Fit T-Shirt
-                </p>
-
-                <p class="price">
-                    ₹499
-                </p>
-
-                <p class="discount">
-                    50% OFF
+                    Invest in companies
                 </p>
 
             </div>
 
-        </div>
 
+            <div class="action">
 
-        <div class="product">
-
-            <div class="wishlist">
-                ♡
-            </div>
-
-            <div class="product-image">
-                👗
-            </div>
-
-            <div class="product-info">
+                <div class="action-icon">
+                    💰
+                </div>
 
                 <h3>
-                    DressBerry
+                    Mutual Funds
                 </h3>
 
                 <p>
-                    Women Floral Dress
-                </p>
-
-                <p class="price">
-                    ₹799
-                </p>
-
-                <p class="discount">
-                    40% OFF
+                    Start with small amounts
                 </p>
 
             </div>
 
-        </div>
 
+            <div class="action">
 
-        <div class="product">
-
-            <div class="wishlist">
-                ♡
-            </div>
-
-            <div class="product-image">
-                👟
-            </div>
-
-            <div class="product-info">
+                <div class="action-icon">
+                    🏦
+                </div>
 
                 <h3>
-                    Puma
+                    IPOs
                 </h3>
 
                 <p>
-                    Running Shoes
-                </p>
-
-                <p class="price">
-                    ₹1,999
-                </p>
-
-                <p class="discount">
-                    45% OFF
+                    Apply for new listings
                 </p>
 
             </div>
 
-        </div>
 
+            <div class="action">
 
-        <div class="product">
-
-            <div class="wishlist">
-                ♡
-            </div>
-
-            <div class="product-image">
-                👜
-            </div>
-
-            <div class="product-info">
+                <div class="action-icon">
+                    🪙
+                </div>
 
                 <h3>
-                    Lavie
+                    Digital Gold
                 </h3>
 
                 <p>
-                    Women's Handbag
-                </p>
-
-                <p class="price">
-                    ₹1,299
-                </p>
-
-                <p class="discount">
-                    55% OFF
+                    Invest in gold
                 </p>
 
             </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TOP STOCKS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                Top Stocks
+            </h2>
+
+            <a href="#">
+                Explore stocks →
+            </a>
 
         </div>
 
 
-        <div class="product">
+        <div class="stocks">
 
-            <div class="wishlist">
-                ♡
+
+            <div class="stock-card">
+
+                <div class="stock-top">
+
+                    <div class="stock-logo">
+                        T
+                    </div>
+
+                    <div class="stock-name">
+
+                        <h3>
+                            TCS
+                        </h3>
+
+                        <p>
+                            Tata Consultancy Services
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stock-price">
+                    ₹3,845.20
+                </div>
+
+                <div class="stock-change positive">
+                    ▲ 1.42%
+                </div>
+
+                <button class="buy-btn">
+                    Buy
+                </button>
+
             </div>
 
-            <div class="product-image">
-                ⌚
+
+
+            <div class="stock-card">
+
+                <div class="stock-top">
+
+                    <div class="stock-logo">
+                        R
+                    </div>
+
+                    <div class="stock-name">
+
+                        <h3>
+                            RELIANCE
+                        </h3>
+
+                        <p>
+                            Reliance Industries
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stock-price">
+                    ₹2,945.65
+                </div>
+
+                <div class="stock-change positive">
+                    ▲ 0.82%
+                </div>
+
+                <button class="buy-btn">
+                    Buy
+                </button>
+
             </div>
 
-            <div class="product-info">
+
+
+            <div class="stock-card">
+
+                <div class="stock-top">
+
+                    <div class="stock-logo">
+                        H
+                    </div>
+
+                    <div class="stock-name">
+
+                        <h3>
+                            HDFCBANK
+                        </h3>
+
+                        <p>
+                            HDFC Bank
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stock-price">
+                    ₹1,756.40
+                </div>
+
+                <div class="stock-change negative">
+                    ▼ 0.35%
+                </div>
+
+                <button class="buy-btn">
+                    Buy
+                </button>
+
+            </div>
+
+
+
+            <div class="stock-card">
+
+                <div class="stock-top">
+
+                    <div class="stock-logo">
+                        I
+                    </div>
+
+                    <div class="stock-name">
+
+                        <h3>
+                            INFY
+                        </h3>
+
+                        <p>
+                            Infosys
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stock-price">
+                    ₹1,542.80
+                </div>
+
+                <div class="stock-change positive">
+                    ▲ 2.18%
+                </div>
+
+                <button class="buy-btn">
+                    Buy
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MUTUAL FUNDS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                Popular Mutual Funds
+            </h2>
+
+            <a href="#">
+                View all →
+            </a>
+
+        </div>
+
+
+        <div class="funds">
+
+
+            <div class="fund-card">
 
                 <h3>
-                    Fastrack
+                    Parag Parikh Flexi Cap Fund
                 </h3>
 
                 <p>
-                    Analog Watch
+                    Direct Growth • Equity
                 </p>
 
-                <p class="price">
-                    ₹1,599
-                </p>
 
-                <p class="discount">
-                    30% OFF
-                </p>
+                <div class="fund-details">
+
+                    <div>
+
+                        <small>
+                            1Y Returns
+                        </small>
+
+                        <strong class="positive">
+                            18.45%
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Min. SIP
+                        </small>
+
+                        <strong>
+                            ₹500
+                        </strong>
+
+                    </div>
+
+                </div>
 
             </div>
 
-        </div>
 
 
-        <div class="product">
-
-            <div class="wishlist">
-                ♡
-            </div>
-
-            <div class="product-image">
-                🕶️
-            </div>
-
-            <div class="product-info">
+            <div class="fund-card">
 
                 <h3>
-                    Ray-Ban
+                    HDFC Mid-Cap Opportunities
                 </h3>
 
                 <p>
-                    Stylish Sunglasses
+                    Direct Growth • Equity
                 </p>
 
-                <p class="price">
-                    ₹2,499
-                </p>
 
-                <p class="discount">
-                    25% OFF
-                </p>
+                <div class="fund-details">
+
+                    <div>
+
+                        <small>
+                            1Y Returns
+                        </small>
+
+                        <strong class="positive">
+                            21.20%
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Min. SIP
+                        </small>
+
+                        <strong>
+                            ₹500
+                        </strong>
+
+                    </div>
+
+                </div>
 
             </div>
 
-        </div>
 
 
-        <div class="product">
-
-            <div class="wishlist">
-                ♡
-            </div>
-
-            <div class="product-image">
-                👖
-            </div>
-
-            <div class="product-info">
+            <div class="fund-card">
 
                 <h3>
-                    Levis
+                    SBI Large & Midcap Fund
                 </h3>
 
                 <p>
-                    Slim Fit Jeans
+                    Direct Growth • Equity
                 </p>
 
-                <p class="price">
-                    ₹1,499
-                </p>
 
-                <p class="discount">
-                    35% OFF
-                </p>
+                <div class="fund-details">
+
+                    <div>
+
+                        <small>
+                            1Y Returns
+                        </small>
+
+                        <strong class="positive">
+                            16.72%
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Min. SIP
+                        </small>
+
+                        <strong>
+                            ₹500
+                        </strong>
+
+                    </div>
+
+                </div>
 
             </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- IPO -->
+
+    <section class="ipo">
+
+        <div class="section-title">
+
+            <h2>
+                Upcoming IPOs
+            </h2>
+
+            <a href="#">
+                View all →
+            </a>
 
         </div>
 
 
-        <div class="product">
+        <div class="ipo-row">
 
-            <div class="wishlist">
-                ♡
-            </div>
+            <div class="ipo-company">
 
-            <div class="product-image">
-                🎒
-            </div>
+                <div class="ipo-logo">
+                    A
+                </div>
 
-            <div class="product-info">
+                <div>
 
-                <h3>
-                    Wildcraft
-                </h3>
+                    <h3>
+                        ABC Technologies
+                    </h3>
 
-                <p>
-                    Casual Backpack
-                </p>
+                    <p>
+                        Open: Sep 10 - Sep 12
+                    </p>
 
-                <p class="price">
-                    ₹899
-                </p>
-
-                <p class="discount">
-                    40% OFF
-                </p>
+                </div>
 
             </div>
+
+
+            <button class="apply-btn">
+                View IPO
+            </button>
 
         </div>
 
 
-        <div class="product">
+        <div class="ipo-row">
 
-            <div class="wishlist">
-                ♡
-            </div>
+            <div class="ipo-company">
 
-            <div class="product-image">
-                💄
-            </div>
+                <div class="ipo-logo">
+                    F
+                </div>
 
-            <div class="product-info">
+                <div>
 
-                <h3>
-                    Lakme
-                </h3>
+                    <h3>
+                        Future Retail
+                    </h3>
 
-                <p>
-                    Beauty Essentials
-                </p>
+                    <p>
+                        Open: Sep 15 - Sep 17
+                    </p>
 
-                <p class="price">
-                    ₹699
-                </p>
-
-                <p class="discount">
-                    20% OFF
-                </p>
+                </div>
 
             </div>
+
+
+            <button class="apply-btn">
+                View IPO
+            </button>
 
         </div>
 
 
-        <div class="product">
+        <div class="ipo-row">
 
-            <div class="wishlist">
-                ♡
-            </div>
+            <div class="ipo-company">
 
-            <div class="product-image">
-                🧥
-            </div>
+                <div class="ipo-logo">
+                    M
+                </div>
 
-            <div class="product-info">
+                <div>
 
-                <h3>
-                    HRX
-                </h3>
+                    <h3>
+                        Metro Industries
+                    </h3>
 
-                <p>
-                    Men's Jacket
-                </p>
+                    <p>
+                        Open: Sep 20 - Sep 22
+                    </p>
 
-                <p class="price">
-                    ₹1,799
-                </p>
-
-                <p class="discount">
-                    45% OFF
-                </p>
+                </div>
 
             </div>
+
+
+            <button class="apply-btn">
+                View IPO
+            </button>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= DEAL BANNER ================= -->
-
-<section class="deal-banner">
-
-    <div>
-
-        <h2>
-            END OF SEASON SALE
-        </h2>
-
-        <p>
-            FLAT 50% - 80% OFF
-        </p>
-
-        <button class="shop-btn">
-            SHOP NOW
-        </button>
-
-    </div>
-
-</section>
+</main>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
+
     <div>
 
         <h3>
-            ONLINE SHOPPING
+            INVESTMENTS
         </h3>
 
-        <a href="#">Men</a>
-        <a href="#">Women</a>
-        <a href="#">Kids</a>
-        <a href="#">Home & Living</a>
-        <a href="#">Beauty</a>
-        <a href="#">Gift Cards</a>
+        <a href="#">
+            Stocks
+        </a>
+
+        <a href="#">
+            Mutual Funds
+        </a>
+
+        <a href="#">
+            ETFs
+        </a>
+
+        <a href="#">
+            IPOs
+        </a>
+
+        <a href="#">
+            Gold
+        </a>
 
     </div>
 
@@ -1039,15 +1647,24 @@
     <div>
 
         <h3>
-            CUSTOMER POLICIES
+            COMPANY
         </h3>
 
-        <a href="#">Contact Us</a>
-        <a href="#">FAQ</a>
-        <a href="#">Terms Of Use</a>
-        <a href="#">Track Orders</a>
-        <a href="#">Shipping</a>
-        <a href="#">Returns</a>
+        <a href="#">
+            About Us
+        </a>
+
+        <a href="#">
+            Careers
+        </a>
+
+        <a href="#">
+            Blog
+        </a>
+
+        <a href="#">
+            Contact Us
+        </a>
 
     </div>
 
@@ -1055,14 +1672,24 @@
     <div>
 
         <h3>
-            USEFUL LINKS
+            SUPPORT
         </h3>
 
-        <a href="#">Blog</a>
-        <a href="#">Careers</a>
-        <a href="#">Site Map</a>
-        <a href="#">Corporate Information</a>
-        <a href="#">Whitehat</a>
+        <a href="#">
+            Help Center
+        </a>
+
+        <a href="#">
+            FAQs
+        </a>
+
+        <a href="#">
+            Security
+        </a>
+
+        <a href="#">
+            Privacy
+        </a>
 
     </div>
 
@@ -1070,26 +1697,31 @@
     <div>
 
         <h3>
-            KEEP IN TOUCH
+            DISCLAIMER
         </h3>
 
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">YouTube</a>
+        <p>
+            This is a frontend educational
+            demonstration. The prices and
+            investment data shown here are
+            fictional and are not real-time
+            market data.
+        </p>
 
     </div>
+
 
 </footer>
 
 
 <div class="copyright">
 
-    © 2026 Fashion E-Commerce Website.
-    Built for educational purposes.
+    © 2026 Investment App UI.
+    Educational project only.
 
 </div>
 
 
 </body>
+
 </html>
